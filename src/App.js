@@ -4,7 +4,7 @@ import PageFormat from "./config/PageFormat";
 
 const App = () => (
   <div className="App">
-    <GridContainer configs={PageFormat} />
+    <GridContainer config={PageFormat} />
   </div>
 );
 
