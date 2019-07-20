@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.root {
+  flex-grow: 1;
+}
+.paper {
+  height: 140px;
+  width: 100px;
+}
