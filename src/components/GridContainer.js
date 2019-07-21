@@ -1,7 +1,7 @@
 import Grid from "@material-ui/core/Grid";
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles/App.scss";
+import styles from "../styles/App.scss";
 
 const GridContainer = ({ config }) => {
   if (Array.isArray(config)) {

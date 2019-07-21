@@ -3,13 +3,13 @@ const PageFormat = {
   rows: [
     [
       {
-        width: 6,
+        width: 2,
         height: "200px",
-        color: "blue",
+        color: "yellow",
         id: 1
       },
       {
-        width: 6,
+        width: 10,
         height: "200px",
         color: "green",
         id: 2

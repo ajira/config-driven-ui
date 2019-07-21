@@ -1,5 +1,5 @@
 import React from "react";
-import GridContainer from "./GridContainer";
+import GridContainer from "./components/GridContainer";
 import PageFormat from "./config/PageFormat";
 
 const App = () => (
