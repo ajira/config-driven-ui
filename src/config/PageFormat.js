@@ -1,6 +1,3 @@
-import React from "react";
-import Plot from "react-plotly.js";
-
 const PageFormat = {
   id: 0,
   rows: [
@@ -77,22 +74,14 @@ const PageFormat = {
 };
 
 const VizConfig = {
-  // 1: {
-  //   element: (
-  //     <Plot
-  //       data={[
-  //         {
-  //           x: [1, 2, 3],
-  //           y: [2, 6, 3],
-  //           type: "scatter",
-  //           mode: "lines+points",
-  //           marker: { color: "red" }
-  //         }
-  //       ]}
-  //     />
-  //   )
-  // },
-  // 2: { element: <div>Annan</div> },
+  2: {
+    url: "http://localhost:3002/users",
+    type: "plot",
+    plotMapping: { x: "createdDate", y: "kycStatus" },
+    config: {
+      type: "bar"
+    }
+  },
   3: {
     url: "http://localhost:3002/users",
     type: "plot",
@@ -106,10 +95,3 @@ const VizConfig = {
 };
 
 export { PageFormat, VizConfig };
-
-/*
-  type : plot
-  x
-  y
-
- */
