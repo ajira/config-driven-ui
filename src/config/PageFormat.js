@@ -44,13 +44,32 @@ const PageFormat = {
               children: []
             },
             {
-              type: "Element",
+              type: "Horizontal",
               config: {
                 id: "v2",
                 height: "200px",
                 color: "grey"
               },
-              children: []
+              children: [
+                {
+                  type: "Element",
+                  config: {
+                    id: "v2",
+                    height: "200px",
+                    color: "grey",
+                    width: "6"
+                  }
+                },
+                {
+                  type: "Element",
+                  config: {
+                    id: "v2",
+                    height: "200px",
+                    color: "grey",
+                    width: "6"
+                  }
+                }
+              ]
             }
           ]
         }
