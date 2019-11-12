@@ -6,7 +6,6 @@ const Element = ({ config }) => {
   if (config.element) {
     return config.element;
   }
-  console.log("config>>>", config);
   const x = config.data.map(datum => datum[config.plotMapping.x]);
   const y = config.data.map(datum => datum[config.plotMapping.y]);
   return <Plot data={[{ x, y, ...config.config }]} />;

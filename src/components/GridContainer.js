@@ -1,65 +1,38 @@
-import Grid from "@material-ui/core/Grid";
 import React from "react";
-import PropTypes from "prop-types";
+import Grid from "@material-ui/core/Grid";
+import ElementContainer from "./ElementContainer";
 import styles from "../styles/App.scss";
-import Element from "./Element";
+import { propsCheck } from "./CommonUtil";
+
+const Horizontal = ({ config, vizConfig }) =>
+  config.children.map(row => (
+    <GridContainer config={row} vizConfig={vizConfig} />
+  ));
+
+const Vertical = ({ config, vizConfig }) => (
+  <Grid item xs={config.config.width || 12}>
+    {config.children.map(row => (
+      <Grid container className={styles.root} spacing={1}>
+        <GridContainer config={row} vizConfig={vizConfig} />
+      </Grid>
+    ))}
+  </Grid>
+);
+
+const GridLogic = {
+  Horizontal: config => <Horizontal {...config} />,
+  Vertical: config => <Vertical {...config} />,
+  Element: config => <ElementContainer {...config} />
+};
 
 const GridContainer = ({ config, vizConfig }) => {
-  const vizConfigLookup = id => vizConfig[id];
   const { type } = config;
-
-  if (type === "Horizontal") {
-    return config.children.map(row => (
-      <GridContainer config={row} vizConfig={vizConfig} />
-    ));
-  }
-  if (type === "Vertical") {
-    return (
-      <Grid item xs={config.config.width || 12}>
-        {config.children.map(row => (
-          <Grid container className={styles.root} spacing={1}>
-            <GridContainer config={row} vizConfig={vizConfig} />
-          </Grid>
-        ))}
-      </Grid>
-    );
-  }
-  if (type === "Element") {
-    return (
-      <Grid item xs={config.config.width || 12}>
-        <div style={{ backgroundColor: config.config.color }}>
-          <Element config={vizConfigLookup(config.config.id)} />
-        </div>
-      </Grid>
-    );
-  }
-
+  if (type) return GridLogic[type]({ config, vizConfig });
   return <></>;
-  // if (Array.isArray(config)) {
-  //   return config.map(row => (
-  //     <GridContainer config={row} vizConfig={vizConfig} />
-  //   ));
-  // }
-
-  // return (
-  //   <Grid item xs={config.width || 12}>
-  //     <div style={{ backgroundColor: config.color }}>
-  //       <Element config={vizConfigLookup(config.id)} />
-  //     </div>
-  //   </Grid>
-  // );
 };
 
-GridContainer.propTypes = {
-  config: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.object),
-    PropTypes.shape({
-      width: PropTypes.number,
-      height: PropTypes.string,
-      color: PropTypes.string
-    }).isRequired
-  ]).isRequired,
-  vizConfig: PropTypes.shape({ id: PropTypes.object }).isRequired
-};
+GridContainer.propTypes = propsCheck;
+Vertical.propTypes = propsCheck;
+Horizontal.propTypes = propsCheck;
 
 export default GridContainer;
