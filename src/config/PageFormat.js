@@ -1,80 +1,79 @@
 const PageFormat = {
-  id: 0,
-  rows: [
-    [
-      {
-        width: 6,
+  type: "Vertical",
+  config: {},
+  children: [
+    {
+      type: "Element",
+      config: {
+        id: "title",
         height: "200px",
-        color: "yellow",
-        id: 1
+        color: "yellow"
       },
-      {
-        width: 6,
+      children: []
+    },
+    {
+      type: "Horizontal",
+      config: {},
+      children: [
+        {
+          type: "Element",
+          config: {
+            id: "h1",
+            width: "6",
+            height: "200px",
+            color: "green"
+          },
+          children: []
+        },
+        {
+          type: "Vertical",
+          config: {
+            id: "h2",
+            width: "6",
+            height: "200px",
+            color: "blue"
+          },
+          children: [
+            {
+              type: "Element",
+              config: {
+                id: "v1",
+                height: "200px",
+                color: "orange"
+              },
+              children: []
+            },
+            {
+              type: "Element",
+              config: {
+                id: "v2",
+                height: "200px",
+                color: "grey"
+              },
+              children: []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "Element",
+      config: {
+        id: "title2",
         height: "200px",
-        color: "green",
-        id: 2
-      }
-    ],
-    [
-      {
-        width: 4,
-        height: "200px",
-        color: "blue",
-        id: 3
+        color: "yellow"
       },
-      {
-        width: 8,
-        height: "200px",
-        color: "green",
-        id: 4
-      }
-    ],
-    [
-      {
-        width: 2,
-        height: "200px",
-        color: "blue",
-        id: 5
-      },
-      {
-        width: 2,
-        height: "200px",
-        color: "blue",
-        id: 6
-      },
-      {
-        width: 8,
-        height: "200px",
-        color: "green",
-        id: 7
-      }
-    ],
-    [
-      {
-        width: 8,
-        rows: [
-          { height: "200px", color: "yellow", id: 8 },
-          { height: "200px", color: "orange", id: 9 }
-        ]
-      },
-      {
-        width: 2,
-        height: "400px",
-        color: "blue",
-        id: 10
-      },
-      {
-        width: 2,
-        height: "400px",
-        color: "green",
-        id: 11
-      }
-    ]
+      children: []
+    }
   ]
 };
 
 const VizConfig = {
-  2: {
+  title: {
+    type: "title",
+    value: "Test Title"
+  },
+  h1: {
     url: "http://localhost:3002/users",
     type: "plot",
     plotMapping: { x: "createdDate", y: "kycStatus" },
@@ -82,7 +81,7 @@ const VizConfig = {
       type: "bar"
     }
   },
-  3: {
+  v2: {
     url: "http://localhost:3002/users",
     type: "plot",
     plotMapping: { x: "createdDate", y: "gender" },
