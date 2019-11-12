@@ -13,7 +13,7 @@ parserOptions:
 plugins:
   - react
 rules:
-  quotes: ["error", "double", {avoidEscape: true}]
+  quotes: ["error", "double", { avoidEscape: true }]
   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   arrow-parens: ["error", "as-needed"]
   comma-dangle: ["error", "never"]
