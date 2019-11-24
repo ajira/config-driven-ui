@@ -1,14 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Plot from "react-plotly.js";
+import Plotly from "./Plotly";
+import Title from "./Title";
 
-const Element = ({ config }) => {
+const handleType = {
+  title: config => <Title config={config} />,
+  plot: config => <Plotly config={config} />
+};
+const Element = ({ type, config }) => {
   if (config.element) {
     return config.element;
   }
-  const x = config.data.map(datum => datum[config.plotMapping.x]);
-  const y = config.data.map(datum => datum[config.plotMapping.y]);
-  return <Plot data={[{ x, y, ...config.config }]} />;
+  const handler = handleType[type];
+  return handler ? handler(config) : null;
 };
 
 Element.defaultProps = {
@@ -16,11 +20,12 @@ Element.defaultProps = {
 };
 
 Element.propTypes = {
+  type: PropTypes.type,
   config: PropTypes.shape({
     element: PropTypes.element,
     data: PropTypes.array,
     config: PropTypes.object,
-    type: PropTypes.string,
+    value: PropTypes.string,
     plotMapping: PropTypes.shape({ x: PropTypes.string, y: PropTypes.string })
   })
 };

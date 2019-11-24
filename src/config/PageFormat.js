@@ -90,24 +90,30 @@ const PageFormat = {
 const VizConfig = {
   title: {
     type: "title",
-    value: "Test Title"
+    config: {
+      value: "Test Title"
+    }
   },
   h1: {
-    url: "http://localhost:3002/users",
     type: "plot",
-    plotMapping: { x: "createdDate", y: "kycStatus" },
     config: {
-      type: "bar"
+      url: "http://localhost:3002/users",
+      plotMapping: { x: "createdDate", y: "kycStatus" },
+      config: {
+        type: "bar"
+      }
     }
   },
   v2: {
-    url: "http://localhost:3002/users",
     type: "plot",
-    plotMapping: { x: "createdDate", y: "gender" },
     config: {
-      type: "scatter",
-      mode: "lines+points",
-      marker: { color: "blue" }
+      url: "http://localhost:3002/users",
+      plotMapping: { x: "createdDate", y: "gender" },
+      config: {
+        type: "scatter",
+        mode: "lines+points",
+        marker: { color: "blue" }
+      }
     }
   }
 };

@@ -92,7 +92,7 @@ Translating this to our solution, we will
 
 In the above case, both the `Elements` and `Vertical` are set with the width passed to it.
 
-So we created a class called the [GridContainer](./src/components/GridContainer.js) that
+So we created a class called the [GridContainer](src/components/grid/GridContainer.js) that
 takes an input config, which is nothing but a single element of the JSON, checks for it's type to be one in "Vertical", "Horizontal" or "Element" and
 
 - For Vertical

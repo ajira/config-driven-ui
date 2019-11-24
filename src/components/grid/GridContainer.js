@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import ElementContainer from "./ElementContainer";
-import styles from "../styles/App.scss";
-import { propsCheck } from "./CommonUtil";
+import styles from "../../styles/App.scss";
+import { propsCheck } from "../../util/CommonUtil";
 
 const Horizontal = ({ config, vizConfig }) =>
   config.children.map(row => (
