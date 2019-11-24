@@ -134,4 +134,4 @@ The overall configuration looked like [this](./src/config/PageFormat.js) that co
   - Mapping for each of the `id` from the `Elements`
   - Can be of different types, in this case `Title` and `Plot`
 
-In the Part 2 of this blog post, we'll see how we were able to build this configuration using Drag and Drop components and persist the same into a backend.
+In the [Part 2](https://techmusings.dev/buildingAConfigDrivenUiInReactPart2) of this blog post, we'll see how we were able to build this configuration using Drag and Drop components and persist the same into a backend.
