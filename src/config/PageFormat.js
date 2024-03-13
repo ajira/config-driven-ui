@@ -1,3 +1,5 @@
+const USERS_URL = "http://localhost:3002/users";
+
 const PageFormat = {
   type: "Vertical",
   config: {},
@@ -97,7 +99,7 @@ const VizConfig = {
   h1: {
     type: "plot",
     config: {
-      url: "http://localhost:3002/users",
+      url: USERS_URL,
       plotMapping: { x: "createdDate", y: "kycStatus" },
       config: {
         type: "bar"
@@ -107,7 +109,7 @@ const VizConfig = {
   v2: {
     type: "plot",
     config: {
-      url: "http://localhost:3002/users",
+      url: USERS_URL,
       plotMapping: { x: "createdDate", y: "gender" },
       config: {
         type: "scatter",
